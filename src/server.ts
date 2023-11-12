@@ -2,12 +2,10 @@
 import express from 'express';
 
 const app = express();
-const port = process.env.PORT || 3000;
 
-app.get('/init', (req, res) => {
-  res.send('¡Hola, mundo!');
+app.get('/api/hello', (req, res) => {
+  res.json({ message: '¡Hola desde la función serverless de Netlify con TypeScript!' });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
-});
+// Configuración para Netlify Functions
+export default app;

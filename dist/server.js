@@ -6,10 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // src/server.ts
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
-const port = process.env.PORT || 3000;
-app.get('/', (req, res) => {
-    res.send('¡Hola, mundo!');
+app.get('/api/hello', (req, res) => {
+    res.json({ message: '¡Hola desde la función serverless de Netlify con TypeScript!' });
 });
-app.listen(port, () => {
-    console.log(`Servidor escuchando en el puerto ${port}`);
-});
+// Configuración para Netlify Functions
+exports.default = app;
