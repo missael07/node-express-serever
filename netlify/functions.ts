@@ -1,5 +1,5 @@
 // netlify/function.ts
-import app from '../src/server';
+import app from '../../server';
 
 // Configuración para Netlify Functions
 exports.handler = async (event, context) => {
